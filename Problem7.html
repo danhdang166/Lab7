@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Alert Messages</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="Problem7.css">
+</head>
+<body>
+	<div class="danger-alert">
+		<div class="xbtn">&times;</div>  
+		<div>Danger! Indicates a dangerous or potentially negative action. </div>
+	</div>
+
+	<div class="success-alert">
+		<div class="xbtn">&times;</div>  
+		<div>Success! Indicates a successful or positive action.</div>
+	</div>
+
+	<div class="info-alert">
+		<div class="xbtn">&times;</div>  
+		<div>Info! Indicates a neutral informative change or action.</div>
+	</div>
+
+	<div class="warning-alert">
+		<div class="xbtn">&times;</div>  
+		<div>Warning! Indicates a warning that might need attention.</div>
+	</div>
+
+	<script type="text/javascript">
+		var closeArray = document.querySelectorAll(".xbtn");
+		for (let i = 0; i < closeArray.length; i++) {
+			closeArray[i].onclick = function()	{
+			  	var parent = this.parentElement;
+			  	setTimeout(function() {
+			  		parent.style.display = "none";	
+			  	}, 100);
+			}
+		}
+
+	</script>
+</body>
+</html>

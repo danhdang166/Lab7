@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Gallery </title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="Problem5.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<img src="./images/gallery_1.jpg" onclick="show(this)" alt="Gallery" loading="lazy">
+			</div>
+			<div class="col-md-3">
+				<img src="./images/gallery_2.jpg" onclick="show(this)" alt="Gallery" loading="lazy">
+			</div>
+			<div class="col-md-3">
+				<img src="./images/gallery_3.jpg" onclick="show(this)" alt="Gallery" loading="lazy">
+			</div>
+			<div class="col-md-3">
+				<img src="./images/gallery_4.jpg" onclick="show(this)" alt="Gallery" loading="lazy">
+			</div>
+		</div>
+		<div class="big-picture">
+			<img src="./images/gallery_1.jpg" id="pictureID" alt="Gallery" loading="lazy">
+			<div class="close" >&times;</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function show(ele) {
+			let picture = document.getElementById("pictureID");
+			picture.src = ele.src ;
+            picture.parentElement.style.display = "block";
+		}
+		var closeArray = document.querySelectorAll(".close");
+        for (let i = 0; i < closeArray.length; i++) {
+            closeArray[i].onclick = function()  {
+                var parent = this.parentElement;
+                setTimeout(function() {
+                    parent.style.display = "none";  
+                }, 100);
+            }
+        }
+       
+	</script>
+</body>
+</html>
